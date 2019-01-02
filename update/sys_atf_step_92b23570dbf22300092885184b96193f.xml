@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <order>3</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-01-02 03:45:34</sys_created_on>
+        <sys_id>92b23570dbf22300092885184b96193f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="Logger" source="x_293046_logger">60c0b9e94f6a23002297417da310c766</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Logger">60c0b9e94f6a23002297417da310c766</sys_scope>
+        <sys_update_name>sys_atf_step_92b23570dbf22300092885184b96193f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-01-02 03:45:34</sys_updated_on>
+        <table/>
+        <test display_value="Logger - initialisation">0222fd30dbf22300092885184b961941</test>
+        <timeout/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=92b23570dbf22300092885184b96193f"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>92b23570dbf22300092885184b96193f</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-01-02 03:45:34</sys_created_on>
+        <sys_id>d3b27930dbf22300092885184b961960</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-01-02 03:45:34</sys_updated_on>
+        <value>describe('Test SubProdLogger', function() {&#13;
+	it('partial initialisation', function() {&#13;
+		var logger = new SubProdLogger(null, "prefix");&#13;
+		expect(logger).not.toBe(true);&#13;
+	});&#13;
+});&#13;
+&#13;
+jasmine.getEnv().execute();</value>
+        <variable display_value="">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

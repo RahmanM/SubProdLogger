@@ -35,11 +35,22 @@ SubProdLogger.prototype = {
      * @param {string} logPrefix prefix to be added to the log otherwise will be defaulted to
      */
     initialize: function(subProdKeywords, logPrefix) {	
+		
+		// if exists validate it
+		if(subProdKeywords && !(subProdKeywords instanceof Array)){
+			throw new Error("NotAnArray", "subProdKeywords should be an array!");
+		}
+		
+		// if exists validate it
+		if(logPrefix && (typeof logPrefix !== 'string')){
+			throw new Error("NotAString", "logPrefix should be a string e.g. (VF).");
+		}
+		
 		this._subProdKeywords = subProdKeywords;
 		this._logPrefix = logPrefix;
 	
 		if(!this._subProdKeywords){
-			this._subProdKeywords = ['https://dev50458.service-now.com', 'test', "uat", 'stage', 'qa'];
+			this._subProdKeywords = ['dev', 'test', "uat", 'stage', 'qa'];
 		}
 		
 		if(!this._logPrefix){
@@ -58,7 +69,10 @@ SubProdLogger.prototype = {
 	warn : function(msg){
 		if (this._logApplicable) {
 			gs.warn(this._logPrefix + msg);
+			return true;
 		}
+		
+		return false;
 	},
     
     /**
@@ -68,7 +82,10 @@ SubProdLogger.prototype = {
 	error : function(msg){
 		if (this._logApplicable) {
 			gs.error(this._logPrefix + msg);
+			return true;
 		}
+		
+		return false;
 	},
     
     /**
@@ -78,7 +95,10 @@ SubProdLogger.prototype = {
 	info : function(msg){
 		if (this._logApplicable) {
 			gs.info(this._logPrefix + msg);
+			return true;
 		}
+		
+		return false;
 	},
 	
 	// Helper functions
@@ -114,13 +134,13 @@ SubProdLogger.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-12-23 01:18:00</sys_created_on>
         <sys_id>58e075654faa23002297417da310c7eb</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>SubProdLogger</sys_name>
         <sys_package display_value="Logger" source="x_293046_logger">60c0b9e94f6a23002297417da310c766</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Logger">60c0b9e94f6a23002297417da310c766</sys_scope>
         <sys_update_name>sys_script_include_58e075654faa23002297417da310c7eb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-12-23 01:18:00</sys_updated_on>
+        <sys_updated_on>2019-01-02 04:00:33</sys_updated_on>
     </sys_script_include>
 </record_update>
